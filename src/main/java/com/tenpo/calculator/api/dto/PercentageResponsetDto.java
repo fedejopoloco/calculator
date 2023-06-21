@@ -5,16 +5,14 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 @Data
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Valid
-public class NumberRequestDto {
+public class PercentageResponsetDto {
 
-    @NotNull(message = "azucar")
-    private Double number1;
 
-    @NotNull(message = "azucar")
-    private Double number2;
+    private PercentageResponseValueDto percentage;
+
+
 }
