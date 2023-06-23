@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.tenpo.calculator.api.entity.RequestLogEntity;
+import com.tenpo.calculator.api.infra.entity.RequestLogEntity;
 import com.tenpo.calculator.api.handler.ErrorResponseDto;
-import com.tenpo.calculator.api.service.RequestLogService;
+import com.tenpo.calculator.api.core.service.RequestLogService;
 import com.tenpo.calculator.api.util.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

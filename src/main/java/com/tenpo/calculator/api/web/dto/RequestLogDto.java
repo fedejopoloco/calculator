@@ -1,4 +1,4 @@
-package com.tenpo.calculator.api.dto;
+package com.tenpo.calculator.api.web.dto;
 
 import lombok.Data;
 import java.time.LocalDateTime;

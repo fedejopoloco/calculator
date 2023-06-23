@@ -1,4 +1,4 @@
-package com.tenpo.calculator.api.entity;
+package com.tenpo.calculator.api.infra.entity;
 
 import lombok.Data;
 
