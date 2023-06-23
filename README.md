@@ -32,7 +32,7 @@ https://drive.google.com/file/d/1d4mMs1GralcjICsmUBEd6fW9wF9LiDxo/view?usp=shari
 
 ## Configuración del entorno descargando el proyecto con git
 
-1. Clona el repositorio:
+1. Clonar el repositorio:
 
    CMD:
 ```
@@ -47,14 +47,14 @@ https://drive.google.com/file/d/1d4mMs1GralcjICsmUBEd6fW9wF9LiDxo/view?usp=shari
    - docker run --name postgres-dev -e POSTGRES_PASSWORD=1234 -e POSTGRES_USER=postgres -e POSTGRES_DB=calculator -p 5432:5432 -d postgres
 ```
 
-3. Navega hasta el directorio raíz del proyecto:
+3. Navegar hasta el directorio raíz del proyecto:
 
    CMD:
 ```
    - cd nombre-del-proyecto
 ```
 
-4. Compila la aplicación con maven:
+4. Compilar la aplicación con maven:
 
    CMD:
 ```
