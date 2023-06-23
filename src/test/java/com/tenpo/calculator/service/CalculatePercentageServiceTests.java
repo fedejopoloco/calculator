@@ -1,8 +1,8 @@
 package com.tenpo.calculator.service;
 
-import com.tenpo.calculator.api.dto.NumberRequestDto;
-import com.tenpo.calculator.api.dto.NumberResponseDto;
-import com.tenpo.calculator.api.service.CalculatePercentageService;
+import com.tenpo.calculator.api.web.dto.NumberRequestDto;
+import com.tenpo.calculator.api.web.dto.NumberResponseDto;
+import com.tenpo.calculator.api.core.service.CalculatePercentageService;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

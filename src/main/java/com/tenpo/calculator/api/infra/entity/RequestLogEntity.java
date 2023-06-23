@@ -1,4 +1,4 @@
-package com.tenpo.calculator.api.entity;
+package com.tenpo.calculator.api.infra.entity;
 
 import java.time.LocalDateTime;
 import lombok.Data;

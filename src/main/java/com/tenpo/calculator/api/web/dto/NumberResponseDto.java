@@ -1,4 +1,4 @@
-package com.tenpo.calculator.api.dto;
+package com.tenpo.calculator.api.web.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;

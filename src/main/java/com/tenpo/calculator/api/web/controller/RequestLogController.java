@@ -1,7 +1,7 @@
-package com.tenpo.calculator.api.controller;
+package com.tenpo.calculator.api.web.controller;
 
-import com.tenpo.calculator.api.dto.RequestLogDto;
-import com.tenpo.calculator.api.service.RequestLogService;
+import com.tenpo.calculator.api.web.dto.RequestLogDto;
+import com.tenpo.calculator.api.core.service.RequestLogService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 @RestController
 @RequestMapping("/request")
-@Api(tags = "Calculate percentage", value = "Calculate percentage")
+@Api(tags = "Request logs", value = "Request logs")
 public class RequestLogController {
 
     @Autowired
     private RequestLogService requestLogService;
 
     @GetMapping(path = "/logs", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Percentage of the sum between 2 numbers")
+    @ApiOperation(value = "Search call history")
     public ResponseEntity<Page<RequestLogDto>> getRequestLogs(Pageable pageable) {
         return ResponseEntity.ok(requestLogService.getAllRequestLog(pageable));
     }
+
 }

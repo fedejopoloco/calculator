@@ -1,9 +1,9 @@
 package com.tenpo.calculator.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tenpo.calculator.api.controller.CalculatorController;
-import com.tenpo.calculator.api.dto.NumberRequestDto;
-import com.tenpo.calculator.api.dto.NumberResponseDto;
+import com.tenpo.calculator.api.web.controller.CalculatorController;
+import com.tenpo.calculator.api.web.dto.NumberRequestDto;
+import com.tenpo.calculator.api.web.dto.NumberResponseDto;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;

@@ -1,9 +1,8 @@
-package com.tenpo.calculator.api.controller;
+package com.tenpo.calculator.api.web.controller;
 
-
-import com.tenpo.calculator.api.dto.NumberRequestDto;
-import com.tenpo.calculator.api.dto.NumberResponseDto;
-import com.tenpo.calculator.api.service.CalculatePercentageService;
+import com.tenpo.calculator.api.web.dto.NumberRequestDto;
+import com.tenpo.calculator.api.web.dto.NumberResponseDto;
+import com.tenpo.calculator.api.core.service.CalculatePercentageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +27,5 @@ public class CalculatorController {
     public ResponseEntity<NumberResponseDto> calculatePercentage(@Valid @RequestBody NumberRequestDto requestDto) {
         return ResponseEntity.ok(calculatePercentageService.calculatePercentage(requestDto));
     }
+
 }

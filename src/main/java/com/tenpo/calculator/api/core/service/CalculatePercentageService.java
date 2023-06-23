@@ -1,12 +1,13 @@
-package com.tenpo.calculator.api.service;
+package com.tenpo.calculator.api.core.service;
 
-import com.tenpo.calculator.api.client.beeceptor.BeeceptorFeingClient;
-import com.tenpo.calculator.api.dto.NumberRequestDto;
-import com.tenpo.calculator.api.dto.NumberResponseDto;
-import com.tenpo.calculator.api.dto.PercentageResponsetDto;
-import com.tenpo.calculator.api.entity.PercentageEntity;
-import com.tenpo.calculator.api.repository.PercentageRepository;
+import com.tenpo.calculator.api.infra.client.beeceptor.BeeceptorFeingClient;
+import com.tenpo.calculator.api.web.dto.NumberRequestDto;
+import com.tenpo.calculator.api.web.dto.NumberResponseDto;
+import com.tenpo.calculator.api.web.dto.PercentageResponsetDto;
+import com.tenpo.calculator.api.infra.entity.PercentageEntity;
+import com.tenpo.calculator.api.infra.repository.PercentageRepository;
 import feign.FeignException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +18,10 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.logging.Logger;
 
 @Service
+@Slf4j
 public class CalculatePercentageService {
-
-	private static Logger logger = Logger.getLogger(CalculatePercentageService.class.getName());
 
 	@Autowired
 	private BeeceptorFeingClient beeceptorFeingClient;
@@ -32,8 +31,6 @@ public class CalculatePercentageService {
 
 	@Retryable(value = Exception.class, maxAttempts = 3)
 	public NumberResponseDto calculatePercentage(NumberRequestDto requestDto) {
-/*		String fede = null;
-		fede.toString();*/
 		return addNumberAndPercentage(requestDto.getNumber1(), requestDto.getNumber2(),
 				findPercentage());
 	}
@@ -61,12 +58,12 @@ public class CalculatePercentageService {
 			percentageRepository.findFirstByOrderByIdDesc().ifPresent(percentageEntity ->
 					result.set(percentageEntity.getValue()));
 			if (Objects.isNull(result.get())) {
+				log.error("There was an error getting the percentage", ex.getMessage());
 				throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
 						"There was an error getting the percentage");
 			}
 			return result.get();
 		}
-
 		return null;
 	}
 

@@ -1,6 +1,6 @@
-package com.tenpo.calculator.api.repository;
+package com.tenpo.calculator.api.infra.repository;
 
-import com.tenpo.calculator.api.entity.PercentageEntity;
+import com.tenpo.calculator.api.infra.entity.PercentageEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
