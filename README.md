@@ -78,7 +78,7 @@ Para ejecutar la aplicación, utiliza el siguiente comando en la raiz del proyec
 
 La aplicación se ejecutará en `http://localhost:8080`.  
 
-## Documentación de la API
+## Probar la aplicacción
 
 #### La documentación de la API se encuentra en http://localhost:8080/swagger-ui/ .
 #### Coleccion postman: https://www.postman.com/fprospitti/workspace/federico-prospitti/
